@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Require JS Experiment</title>
+</head>
+<body>
+    <h1>Header, yo</h1>
+    <h2 id="message"></h2>
+
+    <script type="application/javascript">
+        window.STATIC_URL = '{{ STATIC_URL }}';
+    </script>
+    <script data-main="{{ STATIC_URL }}mainapp/app.js" src="{% static 'mainapp/lib/require.js' %}"></script>
+</body>
+</html>
